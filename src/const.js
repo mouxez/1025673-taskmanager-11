@@ -2,7 +2,7 @@ const TASK_COUNT = 20;
 const SHOWING_TASKS_COUNT_ON_START = 8;
 const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
 const DESCRIPTION_LIST = [`Изучить теорию`, `Сделать домашку`, `Пройти интенсив на соточку`];
-const COLORS = [`black`, `yellow`, `blue`, `green`, `pink`];
+const STATUS_COLORS = [`black`, `yellow`, `blue`, `green`, `pink`];
 const DefaultRepeatingDays = {
   'mo': false,
   'tu': false,
@@ -26,6 +26,7 @@ const MONTH_NAMES = [
   `November`,
   `December`,
 ];
-const DAYS = [`mo`, `tu`, `we`, `th`, `fr`, `sa`, `su`];
+const DAYS_OF_THE_WEEK = [`mo`, `tu`, `we`, `th`, `fr`, `sa`, `su`];
 
-export {TASK_COUNT, DESCRIPTION_LIST, COLORS, DefaultRepeatingDays, MONTH_NAMES, DAYS, SHOWING_TASKS_COUNT_ON_START, SHOWING_TASKS_COUNT_BY_BUTTON};
+export {TASK_COUNT, DESCRIPTION_LIST, STATUS_COLORS,
+  DefaultRepeatingDays, MONTH_NAMES, DAYS_OF_THE_WEEK, SHOWING_TASKS_COUNT_ON_START, SHOWING_TASKS_COUNT_BY_BUTTON};

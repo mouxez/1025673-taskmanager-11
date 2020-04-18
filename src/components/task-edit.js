@@ -1,22 +1,21 @@
-import {MONTH_NAMES, DAYS, COLORS} from '../const.js';
+import {MONTH_NAMES, DAYS_OF_THE_WEEK, STATUS_COLORS} from '../const.js';
 import {formatTime} from '../util.js';
 
 const createColorsMarkup = (colors, currentColor) => {
   return colors.map((color, index) => {
-    return (`
-    <input
-    type="radio"
-    id="color-${color}-${index}"
-    class="card__color-input card__color-input--${color} visually-hidden"
-    name="color"
-    value="${color}"
-    ${currentColor === color ? `checked` : ``}
-  />
-  <label
-    for="color-${color}--${index}"
-    class="card__color card__color--${color}"
-    >${color}</label
-  >`);
+    return (
+      `<input
+      type="radio"
+      id="color-${color}-${index}"
+      class="card__color-input card__color-input--${color} visually-hidden"
+      name="color"
+      value="${color}"
+      ${currentColor === color ? `checked` : ``} />
+      <label
+      for="color-${color}--${index}"
+      class="card__color card__color--${color}">
+      ${color}</label>`
+    );
   }).join(`\n`);
 };
 
@@ -31,11 +30,9 @@ const createRepeatingDaysMarkup = (days, repeatingDays) => {
       id="repeat-${day}-${index}"
       name="repeat"
       value="${day}"
-      ${isChecked ? `checked` : ``}
-      />
-      <label class="card__repeat-day" for="repeat-${day}-${index}"
-      >${day}</label
-      >`
+      ${isChecked ? `checked` : ``} />
+      <label class="card__repeat-day" for="repeat-${day}-${index}">
+      ${day}</label>`
     );
   }).join(`\n`);
 };
@@ -53,8 +50,8 @@ export const createTaskEditTemplate = (task) => {
   const repeatClass = isRepeatingTask ? `card--repeat` : ``;
   const deadlineClass = isExpired ? `card--deadline` : ``;
 
-  const colorsMarkup = createColorsMarkup(COLORS, color);
-  const repeatingDaysMarkup = createRepeatingDaysMarkup(DAYS, repeatingDays);
+  const colorsMarkup = createColorsMarkup(STATUS_COLORS, color);
+  const repeatingDaysMarkup = createRepeatingDaysMarkup(DAYS_OF_THE_WEEK, repeatingDays);
 
   return (
     `<article class="card card--edit card--${color} ${repeatClass} ${deadlineClass}">
@@ -71,8 +68,7 @@ export const createTaskEditTemplate = (task) => {
               <textarea
                 class="card__text"
                 placeholder="Start typing your text here..."
-                name="text"
-              >${description}</textarea>
+                name="text">${description}</textarea>
             </label>
           </div>
 
@@ -92,8 +88,7 @@ export const createTaskEditTemplate = (task) => {
             type="text"
             placeholder=""
             name="date"
-            value="${date} ${time}"
-          />
+            value="${date} ${time}" />
         </label>
       </fieldset>`
       : ``}

@@ -28,8 +28,7 @@ export const createTaskTemplate = (task) => {
             </button>
             <button
               type="button"
-              class="card__btn card__btn--favorites ${favoriteButtonInactiveClass}"
-            >
+              class="card__btn card__btn--favorites ${favoriteButtonInactiveClass}">
               favorites
             </button>
           </div>

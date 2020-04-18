@@ -1,4 +1,4 @@
-import {DefaultRepeatingDays, COLORS, DESCRIPTION_LIST} from '../const.js';
+import {DefaultRepeatingDays, STATUS_COLORS, DESCRIPTION_LIST} from '../const.js';
 import {getRandomEl, getRandomDate} from '../util.js';
 
 const generateRepeatingDays = () => {
@@ -14,7 +14,7 @@ const generateTask = () => {
     description: getRandomEl(DESCRIPTION_LIST),
     dueDate,
     repeatingDays: dueDate ? DefaultRepeatingDays : generateRepeatingDays(),
-    color: getRandomEl(COLORS),
+    color: getRandomEl(STATUS_COLORS),
     isArchive: Math.random() > 0.5,
     isFavorite: Math.random() > 0.5,
   };
