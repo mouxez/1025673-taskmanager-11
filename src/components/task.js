@@ -11,7 +11,7 @@ export const createTaskTemplate = (task) => {
   const time = isDateShowing ? formatTime(dueDate) : ``;
   const deadlineClass = isExpired ? `card--deadline` : ``;
 
-  const repeatClass = `card--repeat`;
+  const repeatClass = Object.values(repeatingDays).some(Boolean) ? `card--repeat` : ``;
   const archiveButtonInactiveClass = isArchive ? `` : `card__btn--disabled`;
   const favoriteButtonInactiveClass = isFavorite ? `` : `card__btn--disabled`;
 
