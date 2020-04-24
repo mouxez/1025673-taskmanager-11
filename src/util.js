@@ -54,4 +54,11 @@ const render = (container, element, place) => {
   }
 };
 
-export {getRandomInteger, getRandomEl, formatTime, getRandomDate, createElement, RenderPosition, render};
+export {
+  getRandomInteger,
+  getRandomEl,
+  formatTime,
+  getRandomDate,
+  createElement,
+  RenderPosition,
+  render};
