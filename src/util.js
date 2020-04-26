@@ -4,7 +4,7 @@ function getRandomInteger(min, max) {
   return Math.floor(number);
 }
 
-// случайный элнмент из массива
+// случайный элемент из массива
 function getRandomEl(array) {
   let el = Math.floor(Math.random() * array.length);
   return array[el];
@@ -54,4 +54,12 @@ const render = (container, element, place) => {
   }
 };
 
-export {getRandomInteger, getRandomEl, formatTime, getRandomDate, createElement, RenderPosition, render};
+export {
+  getRandomInteger,
+  getRandomEl,
+  formatTime,
+  getRandomDate,
+  createElement,
+  RenderPosition,
+  render
+};
