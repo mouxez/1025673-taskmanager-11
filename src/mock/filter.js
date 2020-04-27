@@ -1,4 +1,4 @@
-import {getRandomInteger} from '../util.js';
+import {getRandomInteger} from '../utils/utils.js';
 
 const filterNames = [`all`, `overdue`, `today`, `favourites`, `repeating`, `archive`];
 

@@ -1,5 +1,5 @@
 import {DefaultRepeatingDays, STATUS_COLORS, DESCRIPTION_LIST} from '../const.js';
-import {getRandomEl, getRandomDate} from '../util.js';
+import {getRandomEl, getRandomDate} from '../utils/utils.js';
 
 const generateRepeatingDays = () => {
   return Object.assign({}, DefaultRepeatingDays, {

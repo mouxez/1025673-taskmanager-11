@@ -1,6 +1,6 @@
 import {TASK_COUNT, SHOWING_TASKS_COUNT_ON_START, SHOWING_TASKS_COUNT_BY_BUTTON} from './const.js';
 import {generateTasks} from './mock/task.js';
-import {render, RenderPosition} from './util.js';
+import {render, RenderPosition, replace, remove} from './utils/render.js';
 import {generateFilters} from './mock/filter.js';
 import BoardComponent from './components/board.js';
 import FilterComponent from './components/filter.js';
@@ -14,10 +14,10 @@ import NoTasksComponent from './components/no-tasks.js';
 
 const renderTask = (taskListElement, task) => {
   const replaceTaskToEdit = () => {
-    taskListElement.replaceChild(taskEditComponent.getElement(), taskComponent.getElement());
+    replace(taskListElement, taskEditComponent.getElement(), taskComponent.getElement());
   };
   const replaceEditToTask = () => {
-    taskListElement.replaceChild(taskComponent.getElement(), taskEditComponent.getElement());
+    replace(taskListElement, taskComponent.getElement(), taskEditComponent.getElement());
   };
 
   const onEscKeyDown = (evt) => {
@@ -73,7 +73,7 @@ const renderBoard = (boardComponent, tasks) => {
 
     tasks.slice(prevTasksCount, showingTasksCount).forEach((task) => renderTask(taskListElement, task));
     if (showingTasksCount >= tasks.length) {
-      loadMoreButtonComponent.getElement().remove();
+      remove(loadMoreButtonComponent.getElement());
       loadMoreButtonComponent.removeElement();
     }
   });
