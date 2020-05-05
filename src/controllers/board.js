@@ -1,8 +1,9 @@
 import {SHOWING_TASKS_COUNT_ON_START, SHOWING_TASKS_COUNT_BY_BUTTON} from '../const.js';
 import {render, RenderPosition, replace, remove} from '../utils/render.js';
+import {SortType} from '../const.js';
 import LoadMoreButtonComponent from '../components/load-more-button.js';
 import NoTasksComponent from '../components/no-tasks.js';
-import SortComponent, {SortType} from '../components/sort.js';
+import SortComponent from '../components/sort.js';
 import TaskComponent from '../components/task.js';
 import TaskEditComponent from '../components/task-edit.js';
 import TasksComponent from '../components/tasks.js';
