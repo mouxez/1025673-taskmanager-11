@@ -27,6 +27,14 @@ const MONTH_NAMES = [
   `December`,
 ];
 const DAYS_OF_THE_WEEK = [`mo`, `tu`, `we`, `th`, `fr`, `sa`, `su`];
+const SortType = {
+  DATE_DOWN: `date-down`,
+  DATE_UP: `date-up`,
+  DEFAULT: `default`,
+};
 
-export {TASK_COUNT, DESCRIPTION_LIST, STATUS_COLORS,
-  DefaultRepeatingDays, MONTH_NAMES, DAYS_OF_THE_WEEK, SHOWING_TASKS_COUNT_ON_START, SHOWING_TASKS_COUNT_BY_BUTTON};
+export {
+  TASK_COUNT, DESCRIPTION_LIST, STATUS_COLORS,
+  DefaultRepeatingDays, MONTH_NAMES, DAYS_OF_THE_WEEK,
+  SHOWING_TASKS_COUNT_ON_START, SHOWING_TASKS_COUNT_BY_BUTTON, SortType
+};

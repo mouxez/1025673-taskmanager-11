@@ -1,10 +1,5 @@
 import AbstractComponent from './abstract-component.js';
-
-const SortType = {
-  DATE_DOWN: `date-down`,
-  DATE_UP: `date-up`,
-  DEFAULT: `default`,
-};
+import {SortType} from '../const.js';
 
 const createSortTemplate = () => {
   return (`<div class="board__filter-list">
@@ -43,7 +38,3 @@ export default class Sort extends AbstractComponent {
     });
   }
 }
-
-export {
-  SortType,
-};
