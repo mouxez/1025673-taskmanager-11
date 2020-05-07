@@ -1,24 +1,21 @@
-// случайное число 1 до n
+import moment from 'moment';
+
 function getRandomInteger(min, max) {
   let number = min + Math.random() * (max + 1 - min);
   return Math.floor(number);
 }
 
-// случайный элемент из массива
 function getRandomEl(array) {
   let el = Math.floor(Math.random() * array.length);
   return array[el];
 }
 
-const castTimeFormat = (value) => {
-  return value < 10 ? `0${value}` : String(value);
+const formatTime = (date) => {
+  return moment(date).format(`hh:mm`);
 };
 
-const formatTime = (date) => {
-  const hours = castTimeFormat(date.getHours() % 24);
-  const minutes = castTimeFormat(date.getMinutes());
-
-  return `${hours}:${minutes}`;
+const formatDate = (date) => {
+  return moment(date).format(`DD MMMM`);
 };
 
 const getRandomDate = () => {
@@ -36,4 +33,5 @@ export {
   getRandomEl,
   formatTime,
   getRandomDate,
+  formatDate,
 };
