@@ -53,6 +53,12 @@ export default class BoardController {
     this._onLoadMoreButtonClick = this._onLoadMoreButtonClick.bind(this);
     this._creatingTask = null;
   }
+  hide() {
+    this._container.hide();
+  }
+  show() {
+    this._container.show();
+  }
   render() {
     const container = this._container.getElement();
     const tasks = this._tasksModel.getTasks();
